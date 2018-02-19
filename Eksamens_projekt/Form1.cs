@@ -28,7 +28,8 @@ namespace Eksamens_projekt
 
         private void Start_Click(object sender, EventArgs e)
         {
-
+            Player player1 = new Player();
+            player1.life
         }
 
         private void Highscore_Click(object sender, EventArgs e)

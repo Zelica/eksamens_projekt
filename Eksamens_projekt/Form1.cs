@@ -19,7 +19,26 @@ namespace Eksamens_projekt
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.ClientSize = new Size(896, 640);
+            pictureBox1.Image = Eksamens_projekt.Properties.Resources.start_screen_v2;
+            Start.Parent = pictureBox1;
+            Highscore.Parent = pictureBox1;
+            Settings.Parent = pictureBox1;
+        }
 
+        private void Start_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Highscore_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This is a placeholder for a future feature");
+        }
+
+        private void Settings_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This is a placeholder for a future feature");
         }
     }
 }

@@ -49,6 +49,15 @@ namespace Eksamens_projekt
             Mob_Life.Visible = true;
         }
 
+        private void restart()
+        {
+            pictureBox1.Image = Eksamens_projekt.Properties.Resources.start_screen_v2;
+
+            Attack.Visible = false;
+            Player_Life.Visible = false;
+            Mob_Life.Visible = false;
+        }
+
         private void Highscore_Click(object sender, EventArgs e)
         {
             MessageBox.Show("This is a placeholder for a future feature");
@@ -68,10 +77,15 @@ namespace Eksamens_projekt
             {
                 Player1.Current_Life = Player1.Current_Life - Mob.Damage;
                 Player_Life.Text = $"HP: {Player1.Current_Life} / {Player1.Max_Life}";
+                if (Player1.Current_Life < 1)
+                {
+                    MessageBox.Show("You Failed");
+                    restart();
+                }
             }
             else
             {
-                new int;
+                
             }
         }
     }

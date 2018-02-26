@@ -10,6 +10,7 @@ namespace Eksamens_projekt
     {
         public int Current_Life = 10;
         public int Damage = 1;
+        public int Level = 1;
 
         public int Max_Life;
 

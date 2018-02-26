@@ -14,11 +14,31 @@ namespace Eksamens_projekt
     {
         Player Player1;
         Slime Mob;
-
+        int level;
+        int floor;
 
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void restart()
+        {
+            pictureBox1.Image = Eksamens_projekt.Properties.Resources.start_screen_v2;
+
+            Attack.Visible = false;
+            Player_Life.Visible = false;
+            Mob_Life.Visible = false;
+            level = 0;
+        }
+
+        private void new_floor()
+        {
+            level++;
+            floor = Convert.ToInt32(Math.Floor(level / 5f));
+
+            Player1.Current_Life = Player1.Max_Life;
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -45,15 +65,8 @@ namespace Eksamens_projekt
             Attack.Visible = true;
             Player_Life.Visible = true;
             Mob_Life.Visible = true;
-        }
 
-        private void restart()
-        {
-            pictureBox1.Image = Eksamens_projekt.Properties.Resources.start_screen_v2;
-
-            Attack.Visible = false;
-            Player_Life.Visible = false;
-            Mob_Life.Visible = false;
+            level++;
         }
 
         private void Highscore_Click(object sender, EventArgs e)

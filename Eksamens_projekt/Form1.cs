@@ -24,14 +24,12 @@ namespace Eksamens_projekt
         private void Form1_Load(object sender, EventArgs e)
         {
             this.ClientSize = new Size(896, 640);
-            pictureBox1.Image = Eksamens_projekt.Properties.Resources.start_screen_v2;
+
+            restart();
+
             Start.Parent = pictureBox1;
             Highscore.Parent = pictureBox1;
             Settings.Parent = pictureBox1;
-
-            Attack.Visible = false;
-            Player_Life.Visible = false;
-            Mob_Life.Visible = false;
         }
 
         private void Start_Click(object sender, EventArgs e)

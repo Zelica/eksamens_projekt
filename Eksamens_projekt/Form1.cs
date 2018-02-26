@@ -71,7 +71,7 @@ namespace Eksamens_projekt
             }
             else
             {
-
+                new int;
             }
         }
     }

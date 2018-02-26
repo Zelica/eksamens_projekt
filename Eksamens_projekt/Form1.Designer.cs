@@ -96,9 +96,10 @@
             this.Player_Life.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Player_Life.Location = new System.Drawing.Point(164, 160);
             this.Player_Life.Name = "Player_Life";
-            this.Player_Life.Size = new System.Drawing.Size(149, 56);
+            this.Player_Life.Size = new System.Drawing.Size(62, 26);
             this.Player_Life.TabIndex = 4;
             this.Player_Life.Text = "label1";
+            this.Player_Life.Click += new System.EventHandler(this.Player_Life_Click);
             // 
             // Mob_Life
             // 
@@ -108,7 +109,7 @@
             this.Mob_Life.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Mob_Life.Location = new System.Drawing.Point(676, 160);
             this.Mob_Life.Name = "Mob_Life";
-            this.Mob_Life.Size = new System.Drawing.Size(149, 56);
+            this.Mob_Life.Size = new System.Drawing.Size(62, 26);
             this.Mob_Life.TabIndex = 5;
             this.Mob_Life.Text = "label2";
             // 

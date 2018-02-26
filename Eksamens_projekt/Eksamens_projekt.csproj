@@ -51,7 +51,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mobs.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,6 +83,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\start screen v2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

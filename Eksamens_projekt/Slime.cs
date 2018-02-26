@@ -8,18 +8,25 @@ namespace Eksamens_projekt
 {
     class Slime
     {
-        protected int life = 10;
-        protected int damarge = 1;
+        public int Current_Life = 10;
+        public int Damage = 1;
 
-        protected int air_resistance = 0;
-        protected int fire_resistance = 0;
-        protected int water_resistance = 0;
-        protected int earth_resistance = 0;
+        public int Max_Life;
+
+        public int air_resistance = 0;
+        public int fire_resistance = 0;
+        public int water_resistance = 0;
+        public int earth_resistance = 0;
+
+        public Slime()
+        {
+            Max_Life = Current_Life;
+        }
     }
 
     class Fire : Slime
     {
-        Fire()
+        public Fire()
         {
             fire_resistance = 1;
             water_resistance = -1;
@@ -28,7 +35,7 @@ namespace Eksamens_projekt
 
     class Water : Slime
     {
-        Water()
+        public Water()
         {
             water_resistance = 1;
             fire_resistance = -1;
@@ -37,7 +44,7 @@ namespace Eksamens_projekt
 
     class Air : Slime
     {
-        Air()
+        public Air()
         {
             air_resistance = 1;
             earth_resistance = -1;
@@ -46,7 +53,7 @@ namespace Eksamens_projekt
 
     class Earth : Slime
     {
-        Earth()
+        public Earth()
         {
             earth_resistance = 1;
             air_resistance = -1;

@@ -8,12 +8,20 @@ namespace Eksamens_projekt
 {
     public class Player
     {
-        public int life = 20;
-        public int damage = 2;
+        public int Max_Life = 20;
+        public int Damage = 2;
 
-        int air_resistance = 0;
-        int fire_resistance = 0;
-        int water_resistance = 0;
-        int earth_resitnace = 0;
+        public int Current_Life;
+
+        public int air_resistance = 0;
+        public int fire_resistance = 0;
+        public int water_resistance = 0;
+        public int earth_resitnace = 0;
+
+        public Player()
+        {
+            Current_Life = Max_Life;
+        }
+
     }
 }

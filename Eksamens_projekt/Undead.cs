@@ -12,6 +12,7 @@ namespace Eksamens_projekt
         protected float Damage = 2;
 
         protected float Current_Life;
+        protected int Score = 20;
 
         protected float air_resistance = 0;
         protected float fire_resistance = 0;

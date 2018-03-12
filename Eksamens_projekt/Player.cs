@@ -16,7 +16,7 @@ namespace Eksamens_projekt
         public float air_resistance = 0;
         public float fire_resistance = 0;
         public float water_resistance = 0;
-        public float earth_resitnace = 0;
+        public float earth_resistance = 0;
 
         public Player()
         {

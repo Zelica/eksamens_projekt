@@ -19,6 +19,7 @@ namespace Eksamens_projekt
         int level;
         int floor;
         int score;
+        bool Player_turn;
 
         public Form1()
         {
@@ -37,6 +38,7 @@ namespace Eksamens_projekt
             Mob_Life.Visible = false;
 
             level = 0;
+            Player_turn = true;
         }
 
         private void new_floor()
@@ -139,6 +141,7 @@ namespace Eksamens_projekt
             }
             else
             {
+                score = score + Mob.score; 
                 new_floor();
             }
         }

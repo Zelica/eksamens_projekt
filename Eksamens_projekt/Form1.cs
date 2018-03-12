@@ -45,6 +45,7 @@ namespace Eksamens_projekt
 
             restart();
 
+            Score_viewer.Parent = background;
             player_picture.Parent = background;
             mob_picture.Parent = background;
             Start.Parent = background;
@@ -58,7 +59,7 @@ namespace Eksamens_projekt
             player_picture.Image = null;
             mob_picture.Image = null;
 
-
+            Score_viewer.Visible = false;
             Attack.Visible = false;
             Player_Life.Visible = false;
             Mob_Life.Visible = false;
@@ -81,6 +82,9 @@ namespace Eksamens_projekt
             Player_Life.Text = $"HP: {Player1.Current_Life} / {Player1.Max_Life}";
             Mob_Life.Text = $"HP: {Mob.Current_Life} / {Mob.Max_Life}";
 
+            Score_viewer.Text = $"Score: {score}";
+
+            Score_viewer.Visible = true;
             Attack.Visible = true;
             Player_Life.Visible = true;
             Mob_Life.Visible = true;
@@ -147,6 +151,7 @@ namespace Eksamens_projekt
                 else
                 {
                     score = score + Mob.score;
+                    Score_viewer.Text = $"Score: {score}";
                     new_floor();
                 }
             }

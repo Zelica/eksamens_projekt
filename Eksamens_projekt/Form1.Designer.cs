@@ -28,23 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.background = new System.Windows.Forms.PictureBox();
             this.Start = new System.Windows.Forms.Button();
             this.Highscore = new System.Windows.Forms.Button();
             this.Settings = new System.Windows.Forms.Button();
             this.Player_Life = new System.Windows.Forms.Label();
             this.Mob_Life = new System.Windows.Forms.Label();
             this.Attack = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.mob_picture = new System.Windows.Forms.PictureBox();
+            this.player_picture = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.background)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mob_picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player_picture)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // background
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(896, 640);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.background.Location = new System.Drawing.Point(0, 0);
+            this.background.Name = "background";
+            this.background.Size = new System.Drawing.Size(896, 640);
+            this.background.TabIndex = 0;
+            this.background.TabStop = false;
             // 
             // Start
             // 
@@ -94,7 +98,7 @@
             this.Player_Life.BackColor = System.Drawing.Color.White;
             this.Player_Life.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Player_Life.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Player_Life.Location = new System.Drawing.Point(164, 160);
+            this.Player_Life.Location = new System.Drawing.Point(143, 160);
             this.Player_Life.Name = "Player_Life";
             this.Player_Life.Size = new System.Drawing.Size(62, 26);
             this.Player_Life.TabIndex = 4;
@@ -107,11 +111,12 @@
             this.Mob_Life.BackColor = System.Drawing.Color.White;
             this.Mob_Life.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Mob_Life.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mob_Life.Location = new System.Drawing.Point(676, 160);
+            this.Mob_Life.Location = new System.Drawing.Point(655, 160);
             this.Mob_Life.Name = "Mob_Life";
             this.Mob_Life.Size = new System.Drawing.Size(62, 26);
             this.Mob_Life.TabIndex = 5;
             this.Mob_Life.Text = "label2";
+            this.Mob_Life.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // Attack
             // 
@@ -127,23 +132,45 @@
             this.Attack.UseVisualStyleBackColor = false;
             this.Attack.Click += new System.EventHandler(this.Attack_Click);
             // 
+            // mob_picture
+            // 
+            this.mob_picture.BackColor = System.Drawing.Color.Transparent;
+            this.mob_picture.Location = new System.Drawing.Point(565, 188);
+            this.mob_picture.Name = "mob_picture";
+            this.mob_picture.Size = new System.Drawing.Size(256, 256);
+            this.mob_picture.TabIndex = 7;
+            this.mob_picture.TabStop = false;
+            // 
+            // player_picture
+            // 
+            this.player_picture.BackColor = System.Drawing.Color.Transparent;
+            this.player_picture.Location = new System.Drawing.Point(75, 188);
+            this.player_picture.Name = "player_picture";
+            this.player_picture.Size = new System.Drawing.Size(256, 256);
+            this.player_picture.TabIndex = 8;
+            this.player_picture.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1457, 1029);
+            this.Controls.Add(this.player_picture);
+            this.Controls.Add(this.mob_picture);
             this.Controls.Add(this.Attack);
             this.Controls.Add(this.Mob_Life);
             this.Controls.Add(this.Player_Life);
             this.Controls.Add(this.Settings);
             this.Controls.Add(this.Highscore);
             this.Controls.Add(this.Start);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.background);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.background)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mob_picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player_picture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,13 +178,15 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox background;
         private System.Windows.Forms.Button Start;
         private System.Windows.Forms.Button Highscore;
         private System.Windows.Forms.Button Settings;
         private System.Windows.Forms.Label Player_Life;
         private System.Windows.Forms.Label Mob_Life;
         private System.Windows.Forms.Button Attack;
+        private System.Windows.Forms.PictureBox mob_picture;
+        private System.Windows.Forms.PictureBox player_picture;
     }
 }
 

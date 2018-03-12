@@ -87,5 +87,23 @@
   <ItemGroup>
     <None Include="Resources\Background1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Air Slime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Basic Slime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Earth Slime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fire Slime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Water Slime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\character v2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

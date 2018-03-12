@@ -37,6 +37,7 @@
             this.Attack = new System.Windows.Forms.Button();
             this.mob_picture = new System.Windows.Forms.PictureBox();
             this.player_picture = new System.Windows.Forms.PictureBox();
+            this.Score_viewer = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.background)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mob_picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player_picture)).BeginInit();
@@ -100,7 +101,7 @@
             this.Player_Life.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Player_Life.Location = new System.Drawing.Point(143, 160);
             this.Player_Life.Name = "Player_Life";
-            this.Player_Life.Size = new System.Drawing.Size(62, 26);
+            this.Player_Life.Size = new System.Drawing.Size(149, 56);
             this.Player_Life.TabIndex = 4;
             this.Player_Life.Text = "label1";
             // 
@@ -112,7 +113,7 @@
             this.Mob_Life.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Mob_Life.Location = new System.Drawing.Point(655, 160);
             this.Mob_Life.Name = "Mob_Life";
-            this.Mob_Life.Size = new System.Drawing.Size(62, 26);
+            this.Mob_Life.Size = new System.Drawing.Size(149, 56);
             this.Mob_Life.TabIndex = 5;
             this.Mob_Life.Text = "label2";
             this.Mob_Life.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -149,10 +150,23 @@
             this.player_picture.TabIndex = 8;
             this.player_picture.TabStop = false;
             // 
+            // Score_viewer
+            // 
+            this.Score_viewer.AutoSize = true;
+            this.Score_viewer.BackColor = System.Drawing.Color.White;
+            this.Score_viewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Score_viewer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Score_viewer.Location = new System.Drawing.Point(20, 20);
+            this.Score_viewer.Name = "Score_viewer";
+            this.Score_viewer.Size = new System.Drawing.Size(128, 48);
+            this.Score_viewer.TabIndex = 9;
+            this.Score_viewer.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1457, 1029);
+            this.Controls.Add(this.Score_viewer);
             this.Controls.Add(this.player_picture);
             this.Controls.Add(this.mob_picture);
             this.Controls.Add(this.Attack);
@@ -186,6 +200,7 @@
         private System.Windows.Forms.Button Attack;
         private System.Windows.Forms.PictureBox mob_picture;
         private System.Windows.Forms.PictureBox player_picture;
+        private System.Windows.Forms.Label Score_viewer;
     }
 }
 

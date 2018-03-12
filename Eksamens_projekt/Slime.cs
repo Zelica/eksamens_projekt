@@ -8,55 +8,53 @@ namespace Eksamens_projekt
 {
     class Slime
     {
-<<<<<<< HEAD
-        public int Current_Life = 10;
-        public int Damage = 1;
-        public int Level = 1;
-
-        public int Max_Life;
         public int score = 10;
+        public float Max_Life = 10;
+        public float Damage = 1;
 
-        public int air_resistance = 0;
-        public int fire_resistance = 0;
-        public int water_resistance = 0;
-        public int earth_resistance = 0;
+        public float Current_Life;
+
+        public float air_resistance = 0;
+        public float fire_resistance = 0;
+        public float water_resistance = 0;
+        public float earth_resistance = 0;
 
         public Slime()
         {
-            Max_Life = Current_Life;
+            Current_Life = Max_Life;
         }
     }
 
-    class Fire : Slime
+    class Fire_Slime : Slime
     {
-        public Fire()
+        public Fire_Slime()
         {
             fire_resistance = 1;
             water_resistance = -1;
         }
     }
 
-    class Water : Slime
+    class Water_Slime : Slime
     {
-        public Water()
+        public Water_Slime()
         {
             water_resistance = 1;
             fire_resistance = -1;
         }
     }
 
-    class Air : Slime
+    class Air_Slime : Slime
     {
-        public Air()
+        public Air_Slime()
         {
             air_resistance = 1;
             earth_resistance = -1;
         }
     }
 
-    class Earth : Slime
+    class Earth_Slime : Slime
     {
-        public Earth()
+        public Earth_Slime()
         {
             earth_resistance = 1;
             air_resistance = -1;

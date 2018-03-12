@@ -101,19 +101,19 @@ namespace Eksamens_projekt
                     switch (Slime_type)
                     {
                         case 1:
-                            Mob = new Fire();
+                            Mob = new Fire_Slime();
                             mob_picture.Image = Eksamens_projekt.Properties.Resources.Fire_Slime;
                             break;
                         case 2:
-                            Mob = new Water();
+                            Mob = new Water_Slime();
                             mob_picture.Image = Eksamens_projekt.Properties.Resources.Water_Slime;
                             break;
                         case 3:
-                            Mob = new Air();
+                            Mob = new Air_Slime();
                             mob_picture.Image = Eksamens_projekt.Properties.Resources.Air_Slime;
                             break;
                         case 4:
-                            Mob = new Earth();
+                            Mob = new Earth_Slime();
                             mob_picture.Image = Eksamens_projekt.Properties.Resources.Earth_Slime;
                             break;
                         default:

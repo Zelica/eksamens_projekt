@@ -103,7 +103,6 @@
             this.Player_Life.Size = new System.Drawing.Size(62, 26);
             this.Player_Life.TabIndex = 4;
             this.Player_Life.Text = "label1";
-            this.Player_Life.Click += new System.EventHandler(this.Player_Life_Click);
             // 
             // Mob_Life
             // 

@@ -8,6 +8,7 @@ namespace Eksamens_projekt
 {
     class Slime
     {
+<<<<<<< HEAD
         public int Current_Life = 10;
         public int Damage = 1;
         public int Level = 1;

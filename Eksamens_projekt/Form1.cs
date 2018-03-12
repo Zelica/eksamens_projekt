@@ -18,6 +18,7 @@ namespace Eksamens_projekt
         Slime Mob;
         int level;
         int floor;
+        int score;
 
         public Form1()
         {

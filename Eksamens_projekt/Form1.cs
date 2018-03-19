@@ -14,12 +14,14 @@ namespace Eksamens_projekt
     {
         
         int Slime_type;
+        int Undead_type;
         Player Player1;
         Slime Mob;
         int level;
         int floor;
         int score;
         bool Player_turn;
+        int floors_pr_level;
 
         public Form1()
         {
@@ -42,6 +44,8 @@ namespace Eksamens_projekt
         private void Form1_Load(object sender, EventArgs e)
         {
             this.ClientSize = new Size(896, 640);
+
+            floors_pr_level = 10;
 
             restart();
 
@@ -99,31 +103,72 @@ namespace Eksamens_projekt
             level = Convert.ToInt32(Math.Floor(floor / 10f));
             switch (level)
             {
-                default:
+                case 1:
                     Random r1 = new Random();
                     Slime_type = r1.Next(1, 6);
-                    switch (Slime_type)
+                    if(floor % floors_pr_level == 0)
                     {
-                        case 1:
-                            Mob = new Fire_Slime();
-                            mob_picture.Image = Eksamens_projekt.Properties.Resources.Fire_Slime;
-                            break;
-                        case 2:
-                            Mob = new Water_Slime();
-                            mob_picture.Image = Eksamens_projekt.Properties.Resources.Water_Slime;
-                            break;
-                        case 3:
-                            Mob = new Air_Slime();
-                            mob_picture.Image = Eksamens_projekt.Properties.Resources.Air_Slime;
-                            break;
-                        case 4:
-                            Mob = new Earth_Slime();
-                            mob_picture.Image = Eksamens_projekt.Properties.Resources.Earth_Slime;
-                            break;
-                        default:
-                            Mob = new Slime();
-                            mob_picture.Image = Eksamens_projekt.Properties.Resources.Basic_Slime;
-                            break;
+                        Mob = new Boss_Slime();
+                        mob_picture.Image = Eksamens_projekt.Properties.Resources.Boss_Slime;
+                    }
+                    else
+                    {
+                        switch (Slime_type)
+                        {
+                            case 1:
+                                Mob = new Fire_Slime();
+                                mob_picture.Image = Eksamens_projekt.Properties.Resources.Fire_Slime;
+                                break;
+                            case 2:
+                                Mob = new Water_Slime();
+                                mob_picture.Image = Eksamens_projekt.Properties.Resources.Water_Slime;
+                                break;
+                            case 3:
+                                Mob = new Air_Slime();
+                                mob_picture.Image = Eksamens_projekt.Properties.Resources.Air_Slime;
+                                break;
+                            case 4:
+                                Mob = new Earth_Slime();
+                                mob_picture.Image = Eksamens_projekt.Properties.Resources.Earth_Slime;
+                                break;
+                            default:
+                                Mob = new Slime();
+                                mob_picture.Image = Eksamens_projekt.Properties.Resources.Basic_Slime;
+                                break;
+                        }
+                    }
+
+                    break;
+
+                default:
+                    Random r2 = new Random();
+                    Undead_type = r2.Next(1, 5);
+                    //if (floor % floors_pr_level == 0)
+                    //{
+                    //    Mob = new Armored_skeleton();
+                    //    mob_picture.Image = Eksamens_projekt.Properties.Resources.Armored_skeleton;
+                    //}
+                    //else
+                    //{
+                        switch (Undead_type)
+                        {
+                            case 1:
+                                Mob = new Skeleton();
+                                mob_picture.Image = Eksamens_projekt.Properties.Resources.Fire_Slime;
+                                break;
+                            //case 2:
+                                //Mob = new Water_Slime();
+                                //mob_picture.Image = Eksamens_projekt.Properties.Resources.Water_Slime;
+                                //break;
+                            //case 3:
+                                //Mob = new Air_Slime();
+                                //mob_picture.Image = Eksamens_projekt.Properties.Resources.Air_Slime;
+                                //break;
+                            default:
+                                Mob = new Zombie();
+                                mob_picture.Image = Eksamens_projekt.Properties.Resources.Earth_Slime;
+                                break;
+                        //}
                     }
 
                     break;

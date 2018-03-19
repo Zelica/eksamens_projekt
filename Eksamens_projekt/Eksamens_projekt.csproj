@@ -109,5 +109,29 @@
   <ItemGroup>
     <None Include="Resources\Background2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Your turn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enemies turn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boss Slime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\armored skeleton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ghost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skeleton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vampire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zombie.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

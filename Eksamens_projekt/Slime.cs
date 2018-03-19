@@ -25,6 +25,14 @@ namespace Eksamens_projekt
         }
     }
 
+    class Boss_Slime : Slime
+    {
+        public Boss_Slime()
+        {
+            Max_Life = 20;
+        }
+    }
+
     class Fire_Slime : Slime
     {
         public Fire_Slime()

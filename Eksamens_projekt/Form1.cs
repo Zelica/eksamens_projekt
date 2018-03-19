@@ -16,7 +16,7 @@ namespace Eksamens_projekt
         int Slime_type;
         int Undead_type;
         Player Player1;
-        Slime Mob;
+        Mob mob;
         int level;
         float floor;
         int score;
@@ -69,6 +69,8 @@ namespace Eksamens_projekt
             Player_Life.Visible = false;
             Mob_Life.Visible = false;
 
+            floor = 0;
+            score = 0;
             level = 0;
             Player_turn = true;
         }
@@ -81,11 +83,11 @@ namespace Eksamens_projekt
             Player1 = new Player();
             player_picture.Image = Eksamens_projekt.Properties.Resources.character;
 
-            Mob = new Slime();
+            mob = new Slime();
             mob_picture.Image = Eksamens_projekt.Properties.Resources.Basic_Slime;
 
             Player_Life.Text = $"HP: {Player1.Current_Life} / {Player1.Max_Life}";
-            Mob_Life.Text = $"HP: {Mob.Current_Life} / {Mob.Max_Life}";
+            Mob_Life.Text = $"HP: {mob.Current_Life} / {mob.Max_Life}";
 
             Score_viewer.Text = $"Score: {score}";
 
@@ -105,36 +107,37 @@ namespace Eksamens_projekt
 
             switch (level)
             {
-                default: //skal være case 0:
-                    Random r1 = new Random();
-                    Slime_type = r1.Next(1, 6);
+                case 0: //skal være case 0:
                     if(floor % (floors_pr_level - 1) == 0)
                     {
-                        Mob = new Boss_Slime();
+                        mob = new Boss_Slime();
                         mob_picture.Image = Eksamens_projekt.Properties.Resources.Boss_Slime;
                     }
                     else
                     {
+                        Random r1 = new Random();
+                        Slime_type = r1.Next(1, 6);
+
                         switch (Slime_type)
                         {
                             case 1:
-                                Mob = new Fire_Slime();
+                                mob = new Fire_Slime();
                                 mob_picture.Image = Eksamens_projekt.Properties.Resources.Fire_Slime;
                                 break;
                             case 2:
-                                Mob = new Water_Slime();
+                                mob = new Water_Slime();
                                 mob_picture.Image = Eksamens_projekt.Properties.Resources.Water_Slime;
                                 break;
                             case 3:
-                                Mob = new Air_Slime();
+                                mob = new Air_Slime();
                                 mob_picture.Image = Eksamens_projekt.Properties.Resources.Air_Slime;
                                 break;
                             case 4:
-                                Mob = new Earth_Slime();
+                                mob = new Earth_Slime();
                                 mob_picture.Image = Eksamens_projekt.Properties.Resources.Earth_Slime;
                                 break;
                             default:
-                                Mob = new Slime();
+                                mob = new Slime();
                                 mob_picture.Image = Eksamens_projekt.Properties.Resources.Basic_Slime;
                                 break;
                         }
@@ -142,52 +145,45 @@ namespace Eksamens_projekt
 
                     break;
 
-                //default:
-                    /*if(floor % (floors_pr_level - 1) == 0)
+                default:
+                    if (floor % (floors_pr_level - 1) == 0)
                     {
-                        Mob = new Boss_Slime();
-                        mob_picture.Image = Eksamens_projekt.Properties.Resources.Boss_Slime;
+                        mob = new Armored_skeleton();
+                        mob_picture.Image = Eksamens_projekt.Properties.Resources.Armored_skeleton;
                     }
                     else
                     {
                         Random r2 = new Random();
                         Undead_type = r2.Next(1, 5);
 
-                        if (floor % floors_pr_level == 0)
+                        switch (Undead_type)
                         {
-                            Mob = new Armored_skeleton();
-                            mob_picture.Image = Eksamens_projekt.Properties.Resources.Armored_skeleton;
+                            case 1:
+                                mob = new Skeleton();
+                                mob_picture.Image = Eksamens_projekt.Properties.Resources.Skeleton;
+                                break;
+                            case 2:
+                                mob = new Vampire();
+                                mob_picture.Image = Eksamens_projekt.Properties.Resources.Vampire;
+                                break;
+                            case 3:
+                                mob = new Ghost();
+                                mob_picture.Image = Eksamens_projekt.Properties.Resources.Ghost;
+                                break;
+                            default:
+                                mob = new Zombie();
+                                mob_picture.Image = Eksamens_projekt.Properties.Resources.Zombie;
+                                break;
                         }
-                        else
-                        {
-                            switch (Undead_type)
-                            {
-                                case 1:
-                                    Mob = new Skeleton();
-                                    mob_picture.Image = Eksamens_projekt.Properties.Resources.Fire_Slime;
-                                    break;
-                                case 2:
-                                    Mob = new Water_Slime();
-                                    mob_picture.Image = Eksamens_projekt.Properties.Resources.Water_Slime;
-                                    break;
-                                case 3:
-                                    Mob = new Air_Slime();
-                                    mob_picture.Image = Eksamens_projekt.Properties.Resources.Air_Slime;
-                                    break;
-                                default:
-                                    Mob = new Zombie();
-                                    mob_picture.Image = Eksamens_projekt.Properties.Resources.Earth_Slime;
-                                    break;
-                            }
-                        }
-                    }*/
+                    }
+
 
                     break;
             }
 
             Player1.Current_Life = Player1.Max_Life;
             Player_Life.Text = $"HP: {Player1.Current_Life} / {Player1.Max_Life}";
-            Mob_Life.Text = $"HP: {Mob.Current_Life} / {Mob.Max_Life}";
+            Mob_Life.Text = $"HP: {mob.Current_Life} / {mob.Max_Life}";
 
             Player_turn = true;
         }
@@ -196,17 +192,17 @@ namespace Eksamens_projekt
         {
             if (Player_turn == true)
             {
-                Mob.Current_Life = Mob.Current_Life - Player1.Damage;
-                Mob_Life.Text = $"HP: {Mob.Current_Life} / {Mob.Max_Life}";
+                mob.Current_Life = mob.Current_Life - Player1.Damage;
+                Mob_Life.Text = $"HP: {mob.Current_Life} / {mob.Max_Life}";
                 Player_turn = false;
 
-                if (Mob.Current_Life > 1)
+                if (mob.Current_Life > 1)
                 {
                     Mob_turn();
                 }
                 else
                 {
-                    score = score + Mob.score;
+                    score = score + mob.Score;
                     Score_viewer.Text = $"Score: {score}";
                     new_floor();
                 }
@@ -215,7 +211,7 @@ namespace Eksamens_projekt
 
         public void Mob_turn()
         {
-            Player1.Current_Life = Player1.Current_Life - Mob.Damage;
+            Player1.Current_Life = Player1.Current_Life - mob.Damage;
             Player_Life.Text = $"HP: {Player1.Current_Life} / {Player1.Max_Life}";
 
             if (Player1.Current_Life < 1)

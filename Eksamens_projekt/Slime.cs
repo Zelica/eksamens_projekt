@@ -6,21 +6,16 @@ using System.Threading.Tasks;
 
 namespace Eksamens_projekt
 {
-    class Slime
+    class Slime : Mob
     {
-        public int score = 10;
-        public float Max_Life = 10;
-        public float Damage = 1;
-
-        public float Current_Life;
-
-        public float air_resistance = 0;
-        public float fire_resistance = 0;
-        public float water_resistance = 0;
-        public float earth_resistance = 0;
 
         public Slime()
         {
+            Damage = 1;
+            Max_Life = 10;
+
+            Score = 10;
+
             Current_Life = Max_Life;
         }
     }

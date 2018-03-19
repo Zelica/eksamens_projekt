@@ -73,9 +73,9 @@ namespace Eksamens_projekt.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap armored_skeleton {
+        internal static System.Drawing.Bitmap Armored_skeleton {
             get {
-                object obj = ResourceManager.GetObject("armored_skeleton", resourceCulture);
+                object obj = ResourceManager.GetObject("Armored_skeleton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +173,9 @@ namespace Eksamens_projekt.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap skeleton {
+        internal static System.Drawing.Bitmap Skeleton {
             get {
-                object obj = ResourceManager.GetObject("skeleton", resourceCulture);
+                object obj = ResourceManager.GetObject("Skeleton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +193,9 @@ namespace Eksamens_projekt.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap vampire {
+        internal static System.Drawing.Bitmap Vampire {
             get {
-                object obj = ResourceManager.GetObject("vampire", resourceCulture);
+                object obj = ResourceManager.GetObject("Vampire", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +223,9 @@ namespace Eksamens_projekt.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap zombie {
+        internal static System.Drawing.Bitmap Zombie {
             get {
-                object obj = ResourceManager.GetObject("zombie", resourceCulture);
+                object obj = ResourceManager.GetObject("Zombie", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

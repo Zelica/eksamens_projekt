@@ -30,6 +30,7 @@ namespace Eksamens_projekt
         public Boss_Slime()
         {
             Max_Life = 20;
+            Current_Life = Max_Life;
         }
     }
 

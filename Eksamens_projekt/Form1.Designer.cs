@@ -178,6 +178,7 @@
             this.Air.TabIndex = 10;
             this.Air.Text = "Air";
             this.Air.UseVisualStyleBackColor = false;
+            this.Air.Click += new System.EventHandler(this.Air_Click);
             // 
             // Fire
             // 
@@ -191,6 +192,7 @@
             this.Fire.TabIndex = 11;
             this.Fire.Text = "Fire";
             this.Fire.UseVisualStyleBackColor = false;
+            this.Fire.Click += new System.EventHandler(this.Fire_Click);
             // 
             // Earth
             // 
@@ -204,6 +206,7 @@
             this.Earth.TabIndex = 12;
             this.Earth.Text = "Earth";
             this.Earth.UseVisualStyleBackColor = false;
+            this.Earth.Click += new System.EventHandler(this.Earth_Click);
             // 
             // Water
             // 
@@ -217,6 +220,7 @@
             this.Water.TabIndex = 13;
             this.Water.Text = "Water";
             this.Water.UseVisualStyleBackColor = false;
+            this.Water.Click += new System.EventHandler(this.Water_Click);
             // 
             // Form1
             // 

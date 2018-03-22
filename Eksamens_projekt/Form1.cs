@@ -202,35 +202,71 @@ namespace Eksamens_projekt
         {
             if (Player_turn == true)
             {
+                Player_turn = false;
                 mob.Current_Life = mob.Current_Life - Player1.Damage;
                 Mob_Life.Text = $"HP: {mob.Current_Life} / {mob.Max_Life}";
-                Player_turn = false;
 
-                if (mob.Current_Life > 1)
-                {
-                    Mob_turn();
-                }
-                else
-                {
-                    score = score + mob.Score;
-                    Score_viewer.Text = $"Score: {score}";
-                    new_floor();
-                }
+                Mob_turn();
             }
+        }
+
+        private void Air_Click(object sender, EventArgs e)
+        {
+            Player_turn = false;
+            mob.Current_Life = mob.Current_Life - (Player1.Damage - (Player1.Damage * mob.air_resistance));
+            Mob_Life.Text = $"HP: {mob.Current_Life} / {mob.Max_Life}";
+
+            Mob_turn();
+        }
+
+        private void Fire_Click(object sender, EventArgs e)
+        {
+            Player_turn = false;
+            mob.Current_Life = mob.Current_Life - (Player1.Damage - (Player1.Damage * mob.fire_resistance));
+            Mob_Life.Text = $"HP: {mob.Current_Life} / {mob.Max_Life}";
+
+            Mob_turn();
+        }
+
+        private void Earth_Click(object sender, EventArgs e)
+        {
+            Player_turn = false;
+            mob.Current_Life = mob.Current_Life - (Player1.Damage - (Player1.Damage * mob.earth_resistance));
+            Mob_Life.Text = $"HP: {mob.Current_Life} / {mob.Max_Life}";
+
+            Mob_turn();
+        }
+
+        private void Water_Click(object sender, EventArgs e)
+        {
+            Player_turn = false;
+            mob.Current_Life = mob.Current_Life - (Player1.Damage - (Player1.Damage * mob.water_resistance));
+            Mob_Life.Text = $"HP: {mob.Current_Life} / {mob.Max_Life}";
+
+            Mob_turn();
         }
 
         public void Mob_turn()
         {
-            Player1.Current_Life = Player1.Current_Life - mob.Damage;
-            Player_Life.Text = $"HP: {Player1.Current_Life} / {Player1.Max_Life}";
-
-            if (Player1.Current_Life < 1)
+            if (mob.Current_Life > 1)
             {
-                MessageBox.Show("You Failed");
-                restart();
-            }
+                Player1.Current_Life = Player1.Current_Life - mob.Damage;
+                Player_Life.Text = $"HP: {Player1.Current_Life} / {Player1.Max_Life}";
 
-            Player_turn = true;
+                if (Player1.Current_Life < 1)
+                {
+                    MessageBox.Show("You Failed");
+                    restart();
+                }
+
+                Player_turn = true;
+            }
+            else
+            {
+                score = score + mob.Score;
+                Score_viewer.Text = $"Score: {score}";
+                new_floor();
+            }
         }
     }
 }

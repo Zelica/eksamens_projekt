@@ -38,6 +38,10 @@
             this.mob_picture = new System.Windows.Forms.PictureBox();
             this.player_picture = new System.Windows.Forms.PictureBox();
             this.Score_viewer = new System.Windows.Forms.Label();
+            this.Air = new System.Windows.Forms.Button();
+            this.Fire = new System.Windows.Forms.Button();
+            this.Earth = new System.Windows.Forms.Button();
+            this.Water = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.background)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mob_picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player_picture)).BeginInit();
@@ -162,10 +166,66 @@
             this.Score_viewer.TabIndex = 9;
             this.Score_viewer.Text = "label1";
             // 
+            // Air
+            // 
+            this.Air.BackColor = System.Drawing.Color.White;
+            this.Air.FlatAppearance.BorderSize = 0;
+            this.Air.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Air.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Air.Location = new System.Drawing.Point(290, 533);
+            this.Air.Name = "Air";
+            this.Air.Size = new System.Drawing.Size(80, 37);
+            this.Air.TabIndex = 10;
+            this.Air.Text = "Air";
+            this.Air.UseVisualStyleBackColor = false;
+            // 
+            // Fire
+            // 
+            this.Fire.BackColor = System.Drawing.Color.White;
+            this.Fire.FlatAppearance.BorderSize = 0;
+            this.Fire.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Fire.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Fire.Location = new System.Drawing.Point(375, 533);
+            this.Fire.Name = "Fire";
+            this.Fire.Size = new System.Drawing.Size(80, 37);
+            this.Fire.TabIndex = 11;
+            this.Fire.Text = "Fire";
+            this.Fire.UseVisualStyleBackColor = false;
+            // 
+            // Earth
+            // 
+            this.Earth.BackColor = System.Drawing.Color.White;
+            this.Earth.FlatAppearance.BorderSize = 0;
+            this.Earth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Earth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Earth.Location = new System.Drawing.Point(290, 574);
+            this.Earth.Name = "Earth";
+            this.Earth.Size = new System.Drawing.Size(80, 37);
+            this.Earth.TabIndex = 12;
+            this.Earth.Text = "Earth";
+            this.Earth.UseVisualStyleBackColor = false;
+            // 
+            // Water
+            // 
+            this.Water.BackColor = System.Drawing.Color.White;
+            this.Water.FlatAppearance.BorderSize = 0;
+            this.Water.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Water.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Water.Location = new System.Drawing.Point(375, 574);
+            this.Water.Name = "Water";
+            this.Water.Size = new System.Drawing.Size(80, 37);
+            this.Water.TabIndex = 13;
+            this.Water.Text = "Water";
+            this.Water.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1457, 1029);
+            this.Controls.Add(this.Water);
+            this.Controls.Add(this.Earth);
+            this.Controls.Add(this.Fire);
+            this.Controls.Add(this.Air);
             this.Controls.Add(this.Score_viewer);
             this.Controls.Add(this.player_picture);
             this.Controls.Add(this.mob_picture);
@@ -201,6 +261,10 @@
         private System.Windows.Forms.PictureBox mob_picture;
         private System.Windows.Forms.PictureBox player_picture;
         private System.Windows.Forms.Label Score_viewer;
+        private System.Windows.Forms.Button Air;
+        private System.Windows.Forms.Button Fire;
+        private System.Windows.Forms.Button Earth;
+        private System.Windows.Forms.Button Water;
     }
 }
 

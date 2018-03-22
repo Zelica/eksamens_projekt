@@ -69,6 +69,11 @@ namespace Eksamens_projekt
             Player_Life.Visible = false;
             Mob_Life.Visible = false;
 
+            Air.Visible = false;
+            Fire.Visible = false;
+            Earth.Visible = false;
+            Water.Visible = false;
+
             floor = 0;
             score = 0;
             level = 0;
@@ -95,6 +100,11 @@ namespace Eksamens_projekt
             Attack.Visible = true;
             Player_Life.Visible = true;
             Mob_Life.Visible = true;
+
+            Air.Visible = true;
+            Fire.Visible = true;
+            Earth.Visible = true;
+            Water.Visible = true;
 
             floor++;
         }

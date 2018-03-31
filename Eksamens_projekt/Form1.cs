@@ -12,7 +12,7 @@ namespace Eksamens_projekt
 {
     public partial class Form1 : Form
     {
-        
+        // Alle varialber og classer deklares
         int SlimeType;
         int UndeadType;
 
@@ -47,9 +47,10 @@ namespace Eksamens_projekt
         {
             this.ClientSize = new Size(896, 640);
 
-            //skal være et primtal
+            // skal være et primtal siden det kun kan gå op i sig selv
             FloorsPrLevel = 7;
-            Delay = 0;
+            // Hvor lang tid "Your turn" osv visses
+            Delay = 1000;
 
             Restart();
 
@@ -64,7 +65,7 @@ namespace Eksamens_projekt
 
         public async void Restart()
         {
-            //For at knappen til settingsne, ikke cutter ind over mobne skiftes knappens parent
+            // For at knappen til settingsne, ikke cutter ind over mobne skiftes knappens parent
             Settings.Parent = Background;
 
             Background.Image = Eksamens_projekt.Properties.Resources.start_screen;
@@ -82,10 +83,12 @@ namespace Eksamens_projekt
             Earth.Visible = false;
             Water.Visible = false;
 
+            // variablerne bliver resat
             Floor = 0;
             TotalScore = 0;
             Level = 0;
-
+            
+            // "Your turn" bliver vist i det stykke tid variablen Delay er sat til
             Turn_Images.Image = Properties.Resources.Your_turn;
             await Task.Delay(Delay);
             Turn_Images.Image = null;
@@ -95,20 +98,24 @@ namespace Eksamens_projekt
 
         private void Start_Click(object sender, EventArgs e)
         {
-            //For at knappen til settingsne, ikke cutter ind over mobne skiftes knappens parent
+            // For at knappen til settingsne, ikke cutter ind over mobne skiftes knappens parent
             Settings.Parent = MobPicture;
 
             Background.Image = Eksamens_projekt.Properties.Resources.Background1;
 
+            // playeren bliver spawnet
             player = new Player();
             PlayerPicture.Image = Eksamens_projekt.Properties.Resources.character;
 
+            // Det første mob bliver spwnet. Dette vil altid være en normal slime
             mob = new Slime();
             MobPicture.Image = Eksamens_projekt.Properties.Resources.Basic_Slime;
 
+            // Hvor meget liv playeren og mobet har bliver vist 
             PlayerLife.Text = $"HP: {player.CurrentLife} / {player.MaxLife}";
             MobLife.Text = $"HP: {mob.CurrentLife} / {mob.MaxLife}";
 
+            // ens totale Score bliver vist
             ScoreViewer.Text = $"Score: {TotalScore}";
 
             ScoreViewer.Visible = true;
@@ -128,11 +135,14 @@ namespace Eksamens_projekt
         {
             Floor++;
 
+            // Ud fra hvilken floor man er på bliver det udregnet hvilken level man er på.
             Level = Convert.ToInt32(Math.Floor(Floor / FloorsPrLevel));
 
+            // Hvilke level man er på bestemmer hvilken type mobs man skal kæmpe imod
             switch (Level)
             {
                 case 0:
+                    // Der tjekkes hvorvidt 
                     if(Floor % (FloorsPrLevel - 1) == 0)
                     {
                         mob = new BossSlime();
@@ -201,7 +211,6 @@ namespace Eksamens_projekt
                                 break;
                         }
                     }
-
 
                     break;
             }

@@ -142,7 +142,7 @@ namespace Eksamens_projekt
             switch (Level)
             {
                 case 0:
-                    // Der tjekkes hvorvidt 
+                    // Der tjekkes hvorvidt om det er det sidste mob der skal spawnes på dette level, hvis det er spawnes levelets boss
                     if(Floor % (FloorsPrLevel - 1) == 0)
                     {
                         mob = new BossSlime();
@@ -150,6 +150,7 @@ namespace Eksamens_projekt
                     }
                     else
                     {
+                        // Der vælges tilfældigt hvilken undertype mob der skal spawnes
                         Random r1 = new Random();
                         SlimeType = r1.Next(1, 6);
 
@@ -181,6 +182,7 @@ namespace Eksamens_projekt
                     break;
 
                 default:
+                    // Der tjekkes hvorvidt om det er det sidste mob der skal spawnes på dette level, hvis det er spawnes levelets boss
                     if (Floor % (FloorsPrLevel - 1) == 0)
                     {
                         mob = new Armored_skeleton();
@@ -188,6 +190,7 @@ namespace Eksamens_projekt
                     }
                     else
                     {
+                        // Der vælges tilfældigt hvilken undertype mob der skal spawnes
                         Random r2 = new Random();
                         UndeadType = r2.Next(1, 5);
 
@@ -215,10 +218,12 @@ namespace Eksamens_projekt
                     break;
             }
 
+            // playerens liv sættes til maxs og både playerens og mobets visning af deres liv opdateres
             player.CurrentLife = player.MaxLife;
             PlayerLife.Text = $"HP: {player.CurrentLife} / {player.MaxLife}";
             MobLife.Text = $"HP: {mob.CurrentLife} / {mob.MaxLife}";
 
+            // "Your turn" bliver vist i det stykke tid variablen Delay er sat til
             Turn_Images.Image = Properties.Resources.Your_turn;
             await Task.Delay(Delay);
             Turn_Images.Image = null;
@@ -227,8 +232,10 @@ namespace Eksamens_projekt
 
         private void Attack_Click(object sender, EventArgs e)
         {
+            //kun hvis det er playerens tur sker der noget
             if (PlayerTurn == true)
             {
+                //Det er ikke længere playerens tur, mobet taget skade og visningen af mobets liv opdateres
                 PlayerTurn = false;
                 mob.CurrentLife = mob.CurrentLife - player.Damage;
                 MobLife.Text = $"HP: {mob.CurrentLife} / {mob.MaxLife}";
@@ -239,8 +246,10 @@ namespace Eksamens_projekt
 
         private void Air_Click(object sender, EventArgs e)
         {
+            //kun hvis det er playerens tur sker der noget
             if (PlayerTurn == true)
             {
+                //Det er ikke længere playerens tur, mobet taget skade og visningen af mobets liv opdateres
                 PlayerTurn = false;
                 mob.CurrentLife = mob.CurrentLife - (player.Damage - (player.Damage * mob.AirResistance));
                 MobLife.Text = $"HP: {mob.CurrentLife} / {mob.MaxLife}";
@@ -252,8 +261,10 @@ namespace Eksamens_projekt
 
         private void Fire_Click(object sender, EventArgs e)
         {
+            //kun hvis det er playerens tur sker der noget
             if (PlayerTurn == true)
             {
+                //Det er ikke længere playerens tur, mobet taget skade og visningen af mobets liv opdateres
                 PlayerTurn = false;
                 mob.CurrentLife = mob.CurrentLife - (player.Damage - (player.Damage * mob.FireResistance));
                 MobLife.Text = $"HP: {mob.CurrentLife} / {mob.MaxLife}";
@@ -264,8 +275,10 @@ namespace Eksamens_projekt
 
         private void Earth_Click(object sender, EventArgs e)
         {
+            //kun hvis det er playerens tur sker der noget
             if (PlayerTurn == true)
             {
+                //Det er ikke længere playerens tur, mobet taget skade og visningen af mobets liv opdateres
                 PlayerTurn = false;
                 mob.CurrentLife = mob.CurrentLife - (player.Damage - (player.Damage * mob.EarthResistance));
                 MobLife.Text = $"HP: {mob.CurrentLife} / {mob.MaxLife}";
@@ -276,8 +289,10 @@ namespace Eksamens_projekt
 
         private void Water_Click(object sender, EventArgs e)
         {
+            //kun hvis det er playerens tur sker der noget
             if (PlayerTurn == true)
             {
+                //Det er ikke længere playerens tur, mobet taget skade og visningen af mobets liv opdateres
                 PlayerTurn = false;
                 mob.CurrentLife = mob.CurrentLife - (player.Damage - (player.Damage * mob.WaterResistance));
                 MobLife.Text = $"HP: {mob.CurrentLife} / {mob.MaxLife}";

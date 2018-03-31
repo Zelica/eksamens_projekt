@@ -13,15 +13,18 @@ namespace Eksamens_projekt
     public partial class Form1 : Form
     {
         
-        int Slime_type;
-        int Undead_type;
-        Player Player1;
+        int SlimeType;
+        int UndeadType;
+
+        Player player;
         Mob mob;
-        int level;
-        float floor;
-        int score;
-        bool Player_turn;
-        float floors_pr_level;
+
+        int Level;
+        float Floor;
+        int TotalScore;
+        bool PlayerTurn;
+        float FloorsPrLevel;
+
 
         public Form1()
         {
@@ -39,76 +42,83 @@ namespace Eksamens_projekt
         }
 
 
-
-
         private void Form1_Load(object sender, EventArgs e)
         {
             this.ClientSize = new Size(896, 640);
 
             //skal være et primtal
-            floors_pr_level = 7;
+            FloorsPrLevel = 7;
 
-            restart();
+            Restart();
 
-            Score_viewer.Parent = background;
-            player_picture.Parent = Turn_Images;
-            mob_picture.Parent = Turn_Images;
-            Start.Parent = background;
-            Highscore.Parent = background;
-            Settings.Parent = background;
-            Turn_Images.Parent = background;
+            ScoreViewer.Parent = Background;
+            PlayerPicture.Parent = Turn_Images;
+            MobPicture.Parent = Turn_Images;
+            Start.Parent = Background;
+            Highscore.Parent = Background;
+            Settings.Parent = Background;
+            Turn_Images.Parent = Background;
+            ScoreViewer.Parent = Background;
+            PlayerPicture.Parent = Background;
+            MobPicture.Parent = Background;
+            Start.Parent = Background;
+            Highscore.Parent = Background;
+            Settings.Parent = Background;
         }
 
-        public void restart()
+        public void Restart()
         {
-            background.Image = Eksamens_projekt.Properties.Resources.start_screen;
-            player_picture.Image = null;
-            mob_picture.Image = null;
+            Background.Image = Eksamens_projekt.Properties.Resources.start_screen;
+            PlayerPicture.Image = null;
+            MobPicture.Image = null;
             Turn_Images.Image = null;
+            Background.Image = Eksamens_projekt.Properties.Resources.start_screen;
+            PlayerPicture.Image = null;
+            MobPicture.Image = null;
 
-            Score_viewer.Visible = false;
+            ScoreViewer.Visible = false;
             Attack.Visible = false;
-            Player_Life.Visible = false;
-            Mob_Life.Visible = false;
+            PlayerLife.Visible = false;
+            MobLife.Visible = false;
 
             Air.Visible = false;
             Fire.Visible = false;
             Earth.Visible = false;
             Water.Visible = false;
 
-            floor = 0;
-            score = 0;
-            level = 0;
-            Player_turn = true;
+            Floor = 0;
+            TotalScore = 0;
+            Level = 0;
+            PlayerTurn = true;
         }
 
 
         private void Start_Click(object sender, EventArgs e)
         {
-            background.Image = Eksamens_projekt.Properties.Resources.Background1;
+            Background.Image = Eksamens_projekt.Properties.Resources.Background1;
 
-            Player1 = new Player();
-            player_picture.Image = Eksamens_projekt.Properties.Resources.character;
+            player = new Player();
+            PlayerPicture.Image = Eksamens_projekt.Properties.Resources.character;
 
             mob = new Slime();
-            mob_picture.Image = Eksamens_projekt.Properties.Resources.Basic_Slime;
+            MobPicture.Image = Eksamens_projekt.Properties.Resources.Basic_Slime;
 
-            Player_Life.Text = $"HP: {Player1.Current_Life} / {Player1.Max_Life}";
-            Mob_Life.Text = $"HP: {mob.Current_Life} / {mob.Max_Life}";
+            PlayerLife.Text = $"HP: {player.CurrentLife} / {player.MaxLife}";
+            MobLife.Text = $"HP: {mob.CurrentLife} / {mob.MaxLife}";
 
-            Score_viewer.Text = $"Score: {score}";
+            ScoreViewer.Text = $"Score: {TotalScore}";
 
-            Score_viewer.Visible = true;
+            ScoreViewer.Visible = true;
             Attack.Visible = true;
-            Player_Life.Visible = true;
-            Mob_Life.Visible = true;
+            PlayerLife.Visible = true;
+            MobLife.Visible = true;
 
             Air.Visible = true;
             Fire.Visible = true;
             Earth.Visible = true;
             Water.Visible = true;
 
-            floor++;
+            Floor++;
         }
         /*public void Delayed(int delay, Action action)
         {
@@ -122,46 +132,46 @@ namespace Eksamens_projekt
         }
         */
 
-        private void new_floor()
+        private void NewFloor()
         {
-            floor++;
+            Floor++;
 
-            level = Convert.ToInt32(Math.Floor(floor / floors_pr_level));
+            Level = Convert.ToInt32(Math.Floor(Floor / FloorsPrLevel));
 
-            switch (level)
+            switch (Level)
             {
                 case 0: //skal være case 0:
-                    if(floor % (floors_pr_level - 1) == 0)
+                    if(Floor % (FloorsPrLevel - 1) == 0)
                     {
-                        mob = new Boss_Slime();
-                        mob_picture.Image = Eksamens_projekt.Properties.Resources.Boss_Slime;
+                        mob = new BossSlime();
+                        MobPicture.Image = Eksamens_projekt.Properties.Resources.Boss_Slime;
                     }
                     else
                     {
                         Random r1 = new Random();
-                        Slime_type = r1.Next(1, 6);
+                        SlimeType = r1.Next(1, 6);
 
-                        switch (Slime_type)
+                        switch (SlimeType)
                         {
                             case 1:
-                                mob = new Fire_Slime();
-                                mob_picture.Image = Eksamens_projekt.Properties.Resources.Fire_Slime;
+                                mob = new FireSlime();
+                                MobPicture.Image = Eksamens_projekt.Properties.Resources.Fire_Slime;
                                 break;
                             case 2:
-                                mob = new Water_Slime();
-                                mob_picture.Image = Eksamens_projekt.Properties.Resources.Water_Slime;
+                                mob = new WaterSlime();
+                                MobPicture.Image = Eksamens_projekt.Properties.Resources.Water_Slime;
                                 break;
                             case 3:
-                                mob = new Air_Slime();
-                                mob_picture.Image = Eksamens_projekt.Properties.Resources.Air_Slime;
+                                mob = new AirSlime();
+                                MobPicture.Image = Eksamens_projekt.Properties.Resources.Air_Slime;
                                 break;
                             case 4:
-                                mob = new Earth_Slime();
-                                mob_picture.Image = Eksamens_projekt.Properties.Resources.Earth_Slime;
+                                mob = new EarthSlime();
+                                MobPicture.Image = Eksamens_projekt.Properties.Resources.Earth_Slime;
                                 break;
                             default:
                                 mob = new Slime();
-                                mob_picture.Image = Eksamens_projekt.Properties.Resources.Basic_Slime;
+                                MobPicture.Image = Eksamens_projekt.Properties.Resources.Basic_Slime;
                                 break;
                         }
                     }
@@ -169,33 +179,33 @@ namespace Eksamens_projekt
                     break;
 
                 default:
-                    if (floor % (floors_pr_level - 1) == 0)
+                    if (Floor % (FloorsPrLevel - 1) == 0)
                     {
                         mob = new Armored_skeleton();
-                        mob_picture.Image = Eksamens_projekt.Properties.Resources.Armored_skeleton;
+                        MobPicture.Image = Eksamens_projekt.Properties.Resources.Armored_skeleton;
                     }
                     else
                     {
                         Random r2 = new Random();
-                        Undead_type = r2.Next(1, 5);
+                        UndeadType = r2.Next(1, 5);
 
-                        switch (Undead_type)
+                        switch (UndeadType)
                         {
                             case 1:
                                 mob = new Skeleton();
-                                mob_picture.Image = Eksamens_projekt.Properties.Resources.Skeleton;
+                                MobPicture.Image = Eksamens_projekt.Properties.Resources.Skeleton;
                                 break;
                             case 2:
                                 mob = new Vampire();
-                                mob_picture.Image = Eksamens_projekt.Properties.Resources.Vampire;
+                                MobPicture.Image = Eksamens_projekt.Properties.Resources.Vampire;
                                 break;
                             case 3:
                                 mob = new Ghost();
-                                mob_picture.Image = Eksamens_projekt.Properties.Resources.Ghost;
+                                MobPicture.Image = Eksamens_projekt.Properties.Resources.Ghost;
                                 break;
                             default:
                                 mob = new Zombie();
-                                mob_picture.Image = Eksamens_projekt.Properties.Resources.Zombie;
+                                MobPicture.Image = Eksamens_projekt.Properties.Resources.Zombie;
                                 break;
                         }
                     }
@@ -204,78 +214,91 @@ namespace Eksamens_projekt
                     break;
             }
 
-            Player1.Current_Life = Player1.Max_Life;
-            Player_Life.Text = $"HP: {Player1.Current_Life} / {Player1.Max_Life}";
-            Mob_Life.Text = $"HP: {mob.Current_Life} / {mob.Max_Life}";
+            player.CurrentLife = player.MaxLife;
+            PlayerLife.Text = $"HP: {player.CurrentLife} / {player.MaxLife}";
+            MobLife.Text = $"HP: {mob.CurrentLife} / {mob.MaxLife}";
 
-            Player_turn = true;
+            PlayerTurn = true;
         }
 
         private void Attack_Click(object sender, EventArgs e)
         {
-            if (Player_turn == true)
+            if (PlayerTurn == true)
             {
-                Player_turn = false;
-                mob.Current_Life = mob.Current_Life - Player1.Damage;
-                Mob_Life.Text = $"HP: {mob.Current_Life} / {mob.Max_Life}";
+                PlayerTurn = false;
+                mob.CurrentLife = mob.CurrentLife - player.Damage;
+                MobLife.Text = $"HP: {mob.CurrentLife} / {mob.MaxLife}";
 
-                Mob_turn();
+                MobTurn();
             }
         }
 
         private void Air_Click(object sender, EventArgs e)
         {
-            Player_turn = false;
-            mob.Current_Life = mob.Current_Life - (Player1.Damage - (Player1.Damage * mob.air_resistance));
-            Mob_Life.Text = $"HP: {mob.Current_Life} / {mob.Max_Life}";
+            if (PlayerTurn == true)
+            {
+                PlayerTurn = false;
+                mob.CurrentLife = mob.CurrentLife - (player.Damage - (player.Damage * mob.AirResistance));
+                MobLife.Text = $"HP: {mob.CurrentLife} / {mob.MaxLife}";
 
-            Mob_turn();
+                MobTurn();
+            }
+            
         }
 
         private void Fire_Click(object sender, EventArgs e)
         {
-            Player_turn = false;
-            mob.Current_Life = mob.Current_Life - (Player1.Damage - (Player1.Damage * mob.fire_resistance));
-            Mob_Life.Text = $"HP: {mob.Current_Life} / {mob.Max_Life}";
+            if (PlayerTurn == true)
+            {
+                PlayerTurn = false;
+                mob.CurrentLife = mob.CurrentLife - (player.Damage - (player.Damage * mob.FireResistance));
+                MobLife.Text = $"HP: {mob.CurrentLife} / {mob.MaxLife}";
 
-            Mob_turn();
+                MobTurn();
+            }
         }
 
         private void Earth_Click(object sender, EventArgs e)
         {
-            Player_turn = false;
-            mob.Current_Life = mob.Current_Life - (Player1.Damage - (Player1.Damage * mob.earth_resistance));
-            Mob_Life.Text = $"HP: {mob.Current_Life} / {mob.Max_Life}";
+            if (PlayerTurn == true)
+            {
+                PlayerTurn = false;
+                mob.CurrentLife = mob.CurrentLife - (player.Damage - (player.Damage * mob.EarthResistance));
+                MobLife.Text = $"HP: {mob.CurrentLife} / {mob.MaxLife}";
 
-            Mob_turn();
+                MobTurn();
+            }
         }
 
         private void Water_Click(object sender, EventArgs e)
         {
-            Player_turn = false;
-            mob.Current_Life = mob.Current_Life - (Player1.Damage - (Player1.Damage * mob.water_resistance));
-            Mob_Life.Text = $"HP: {mob.Current_Life} / {mob.Max_Life}";
+            if (PlayerTurn == true)
+            {
+                PlayerTurn = false;
+                mob.CurrentLife = mob.CurrentLife - (player.Damage - (player.Damage * mob.WaterResistance));
+                MobLife.Text = $"HP: {mob.CurrentLife} / {mob.MaxLife}";
 
-            Mob_turn();
+                MobTurn();
+            }
         }
 
-        public async void Mob_turn()
+        public async void MobTurn()
         {
-            if (mob.Current_Life > 1)
+            if (mob.CurrentLife > 1)
             {
                 Turn_Images.Image = Properties.Resources.Enemies_turn;
                 await Task.Delay(1000);
                 Turn_Images.Image = null;
 
-                Player1.Current_Life = Player1.Current_Life - mob.Damage;
-                Player_Life.Text = $"HP: {Player1.Current_Life} / {Player1.Max_Life}";
+                player.CurrentLife = player.CurrentLife - mob.Damage;
+                PlayerLife.Text = $"HP: {player.CurrentLife} / {player.MaxLife}";
 
-                if (Player1.Current_Life < 1)
+                if (player.CurrentLife < 1)
                 {
                     Turn_Images.Image = Properties.Resources.Game_Over;
                     await Task.Delay(1500);
                     Turn_Images.Image = null;
-                    restart();
+                    Restart();
                 }
                 else
                 {
@@ -283,14 +306,14 @@ namespace Eksamens_projekt
                     await Task.Delay(1000);
                     Turn_Images.Image = null;
                     //Delayed(2000, () => Turn_Images.Image = null);
-                    Player_turn = true;
+                    PlayerTurn = true;
                 }
             }
             else
             {
-                score = score + mob.Score;
-                Score_viewer.Text = $"Score: {score}";
-                new_floor();
+                TotalScore = TotalScore + mob.Score;
+                ScoreViewer.Text = $"Score: {TotalScore}";
+                NewFloor();
             }
         }
     }

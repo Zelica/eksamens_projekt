@@ -51,11 +51,12 @@ namespace Eksamens_projekt
             restart();
 
             Score_viewer.Parent = background;
-            player_picture.Parent = background;
-            mob_picture.Parent = background;
+            player_picture.Parent = Turn_Images;
+            mob_picture.Parent = Turn_Images;
             Start.Parent = background;
             Highscore.Parent = background;
             Settings.Parent = background;
+            Turn_Images.Parent = background;
         }
 
         public void restart()
@@ -63,6 +64,7 @@ namespace Eksamens_projekt
             background.Image = Eksamens_projekt.Properties.Resources.start_screen;
             player_picture.Image = null;
             mob_picture.Image = null;
+            Turn_Images.Image = null;
 
             Score_viewer.Visible = false;
             Attack.Visible = false;
@@ -108,6 +110,17 @@ namespace Eksamens_projekt
 
             floor++;
         }
+        /*public void Delayed(int delay, Action action)
+        {
+            Timer timer = new Timer();
+            timer.Interval = delay;
+            timer.Tick += (s, e) => {
+                action();
+                timer.Stop();
+            };
+            timer.Start();
+        }
+        */
 
         private void new_floor()
         {
@@ -246,20 +259,32 @@ namespace Eksamens_projekt
             Mob_turn();
         }
 
-        public void Mob_turn()
+        public async void Mob_turn()
         {
             if (mob.Current_Life > 1)
             {
+                Turn_Images.Image = Properties.Resources.Enemies_turn;
+                await Task.Delay(1000);
+                Turn_Images.Image = null;
+
                 Player1.Current_Life = Player1.Current_Life - mob.Damage;
                 Player_Life.Text = $"HP: {Player1.Current_Life} / {Player1.Max_Life}";
 
                 if (Player1.Current_Life < 1)
                 {
-                    MessageBox.Show("You Failed");
+                    Turn_Images.Image = Properties.Resources.Game_Over;
+                    await Task.Delay(1500);
+                    Turn_Images.Image = null;
                     restart();
                 }
-
-                Player_turn = true;
+                else
+                {
+                    Turn_Images.Image = Properties.Resources.Your_turn;
+                    await Task.Delay(1000);
+                    Turn_Images.Image = null;
+                    //Delayed(2000, () => Turn_Images.Image = null);
+                    Player_turn = true;
+                }
             }
             else
             {

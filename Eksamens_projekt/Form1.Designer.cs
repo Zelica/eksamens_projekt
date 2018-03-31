@@ -42,9 +42,11 @@
             this.Fire = new System.Windows.Forms.Button();
             this.Earth = new System.Windows.Forms.Button();
             this.Water = new System.Windows.Forms.Button();
+            this.Turn_Images = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.background)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mob_picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player_picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Turn_Images)).BeginInit();
             this.SuspendLayout();
             // 
             // background
@@ -105,7 +107,7 @@
             this.Player_Life.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Player_Life.Location = new System.Drawing.Point(143, 160);
             this.Player_Life.Name = "Player_Life";
-            this.Player_Life.Size = new System.Drawing.Size(149, 56);
+            this.Player_Life.Size = new System.Drawing.Size(62, 26);
             this.Player_Life.TabIndex = 4;
             this.Player_Life.Text = "label1";
             // 
@@ -117,7 +119,7 @@
             this.Mob_Life.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Mob_Life.Location = new System.Drawing.Point(655, 160);
             this.Mob_Life.Name = "Mob_Life";
-            this.Mob_Life.Size = new System.Drawing.Size(149, 56);
+            this.Mob_Life.Size = new System.Drawing.Size(62, 26);
             this.Mob_Life.TabIndex = 5;
             this.Mob_Life.Text = "label2";
             this.Mob_Life.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -162,7 +164,7 @@
             this.Score_viewer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Score_viewer.Location = new System.Drawing.Point(20, 20);
             this.Score_viewer.Name = "Score_viewer";
-            this.Score_viewer.Size = new System.Drawing.Size(128, 48);
+            this.Score_viewer.Size = new System.Drawing.Size(53, 22);
             this.Score_viewer.TabIndex = 9;
             this.Score_viewer.Text = "label1";
             // 
@@ -222,10 +224,20 @@
             this.Water.UseVisualStyleBackColor = false;
             this.Water.Click += new System.EventHandler(this.Water_Click);
             // 
+            // Turn_Images
+            // 
+            this.Turn_Images.BackColor = System.Drawing.Color.Transparent;
+            this.Turn_Images.Location = new System.Drawing.Point(0, 0);
+            this.Turn_Images.Name = "Turn_Images";
+            this.Turn_Images.Size = new System.Drawing.Size(896, 640);
+            this.Turn_Images.TabIndex = 14;
+            this.Turn_Images.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1457, 1029);
+            this.Controls.Add(this.Turn_Images);
             this.Controls.Add(this.Water);
             this.Controls.Add(this.Earth);
             this.Controls.Add(this.Fire);
@@ -248,6 +260,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.background)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mob_picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player_picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Turn_Images)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,6 +282,7 @@
         private System.Windows.Forms.Button Fire;
         private System.Windows.Forms.Button Earth;
         private System.Windows.Forms.Button Water;
+        private System.Windows.Forms.PictureBox Turn_Images;
     }
 }
 

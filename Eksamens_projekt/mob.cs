@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Eksamens_projekt
 {
+    //Dette er classen Mob. Der nedarves fra denne her til Slime og Undead
     class Mob
     {
         public float MaxLife;

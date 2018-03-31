@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Eksamens_projekt
 {
+    //Undead nedarver/er en subclass af Mob
     class Undead : Mob
     {
-
+        //den er protected for at man ikke kan kalde den uden fra classen. Dette gøres for at vi ikke får en "undead" som et monster man kan kæmpe i mod.
         protected Undead()
         {
             MaxLife = 25;
@@ -20,6 +21,7 @@ namespace Eksamens_projekt
         }
     }
 
+    //En specific type af Undead. Endnu en subclass af en subclass
     class Armored_skeleton : Undead //boss
     {
         public Armored_skeleton()
@@ -32,6 +34,7 @@ namespace Eksamens_projekt
         }
     }
 
+    //En specific type af Undead. Endnu en subclass af en subclass
     class Skeleton : Undead
     {
         public Skeleton()
@@ -41,6 +44,7 @@ namespace Eksamens_projekt
         }
     }
 
+    //En specific type af Undead. Endnu en subclass af en subclass
     class Vampire : Undead
     {
         public Vampire()
@@ -52,6 +56,7 @@ namespace Eksamens_projekt
         }
     }
 
+    //En specific type af Undead. Endnu en subclass af en subclass
     class Ghost : Undead
     {
         public Ghost()
@@ -63,6 +68,7 @@ namespace Eksamens_projekt
         }
     }
 
+    //En specific type af Undead. Endnu en subclass af en subclass
     class Zombie : Undead
     {
         public Zombie()

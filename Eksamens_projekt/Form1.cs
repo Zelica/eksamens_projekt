@@ -64,6 +64,7 @@ namespace Eksamens_projekt
 
         public async void Restart()
         {
+            //For at knappen til settingsne, ikke cutter ind over mobne skiftes knappens parent
             Settings.Parent = Background;
 
             Background.Image = Eksamens_projekt.Properties.Resources.start_screen;
@@ -94,6 +95,7 @@ namespace Eksamens_projekt
 
         private void Start_Click(object sender, EventArgs e)
         {
+            //For at knappen til settingsne, ikke cutter ind over mobne skiftes knappens parent
             Settings.Parent = MobPicture;
 
             Background.Image = Eksamens_projekt.Properties.Resources.Background1;

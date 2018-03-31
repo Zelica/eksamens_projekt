@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.background = new System.Windows.Forms.PictureBox();
+            this.Background = new System.Windows.Forms.PictureBox();
             this.Start = new System.Windows.Forms.Button();
             this.Highscore = new System.Windows.Forms.Button();
             this.Settings = new System.Windows.Forms.Button();
-            this.Player_Life = new System.Windows.Forms.Label();
-            this.Mob_Life = new System.Windows.Forms.Label();
+            this.PlayerLife = new System.Windows.Forms.Label();
+            this.MobLife = new System.Windows.Forms.Label();
             this.Attack = new System.Windows.Forms.Button();
-            this.mob_picture = new System.Windows.Forms.PictureBox();
-            this.player_picture = new System.Windows.Forms.PictureBox();
-            this.Score_viewer = new System.Windows.Forms.Label();
+            this.MobPicture = new System.Windows.Forms.PictureBox();
+            this.PlayerPicture = new System.Windows.Forms.PictureBox();
+            this.ScoreViewer = new System.Windows.Forms.Label();
             this.Air = new System.Windows.Forms.Button();
             this.Fire = new System.Windows.Forms.Button();
             this.Earth = new System.Windows.Forms.Button();
             this.Water = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.background)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mob_picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player_picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Background)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MobPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PlayerPicture)).BeginInit();
             this.SuspendLayout();
             // 
-            // background
+            // Background
             // 
-            this.background.Location = new System.Drawing.Point(0, 0);
-            this.background.Name = "background";
-            this.background.Size = new System.Drawing.Size(896, 640);
-            this.background.TabIndex = 0;
-            this.background.TabStop = false;
+            this.Background.Location = new System.Drawing.Point(0, 0);
+            this.Background.Name = "Background";
+            this.Background.Size = new System.Drawing.Size(896, 640);
+            this.Background.TabIndex = 0;
+            this.Background.TabStop = false;
             // 
             // Start
             // 
@@ -97,30 +97,30 @@
             this.Settings.UseVisualStyleBackColor = true;
             this.Settings.Click += new System.EventHandler(this.Settings_Click);
             // 
-            // Player_Life
+            // PlayerLife
             // 
-            this.Player_Life.AutoSize = true;
-            this.Player_Life.BackColor = System.Drawing.Color.White;
-            this.Player_Life.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Player_Life.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Player_Life.Location = new System.Drawing.Point(143, 160);
-            this.Player_Life.Name = "Player_Life";
-            this.Player_Life.Size = new System.Drawing.Size(149, 56);
-            this.Player_Life.TabIndex = 4;
-            this.Player_Life.Text = "label1";
+            this.PlayerLife.AutoSize = true;
+            this.PlayerLife.BackColor = System.Drawing.Color.White;
+            this.PlayerLife.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PlayerLife.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayerLife.Location = new System.Drawing.Point(143, 160);
+            this.PlayerLife.Name = "PlayerLife";
+            this.PlayerLife.Size = new System.Drawing.Size(149, 56);
+            this.PlayerLife.TabIndex = 4;
+            this.PlayerLife.Text = "label1";
             // 
-            // Mob_Life
+            // MobLife
             // 
-            this.Mob_Life.AutoSize = true;
-            this.Mob_Life.BackColor = System.Drawing.Color.White;
-            this.Mob_Life.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Mob_Life.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mob_Life.Location = new System.Drawing.Point(655, 160);
-            this.Mob_Life.Name = "Mob_Life";
-            this.Mob_Life.Size = new System.Drawing.Size(149, 56);
-            this.Mob_Life.TabIndex = 5;
-            this.Mob_Life.Text = "label2";
-            this.Mob_Life.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.MobLife.AutoSize = true;
+            this.MobLife.BackColor = System.Drawing.Color.White;
+            this.MobLife.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MobLife.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MobLife.Location = new System.Drawing.Point(655, 160);
+            this.MobLife.Name = "MobLife";
+            this.MobLife.Size = new System.Drawing.Size(149, 56);
+            this.MobLife.TabIndex = 5;
+            this.MobLife.Text = "label2";
+            this.MobLife.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // Attack
             // 
@@ -136,35 +136,35 @@
             this.Attack.UseVisualStyleBackColor = false;
             this.Attack.Click += new System.EventHandler(this.Attack_Click);
             // 
-            // mob_picture
+            // MobPicture
             // 
-            this.mob_picture.BackColor = System.Drawing.Color.Transparent;
-            this.mob_picture.Location = new System.Drawing.Point(565, 188);
-            this.mob_picture.Name = "mob_picture";
-            this.mob_picture.Size = new System.Drawing.Size(256, 256);
-            this.mob_picture.TabIndex = 7;
-            this.mob_picture.TabStop = false;
+            this.MobPicture.BackColor = System.Drawing.Color.Transparent;
+            this.MobPicture.Location = new System.Drawing.Point(565, 188);
+            this.MobPicture.Name = "MobPicture";
+            this.MobPicture.Size = new System.Drawing.Size(256, 256);
+            this.MobPicture.TabIndex = 7;
+            this.MobPicture.TabStop = false;
             // 
-            // player_picture
+            // PlayerPicture
             // 
-            this.player_picture.BackColor = System.Drawing.Color.Transparent;
-            this.player_picture.Location = new System.Drawing.Point(75, 188);
-            this.player_picture.Name = "player_picture";
-            this.player_picture.Size = new System.Drawing.Size(256, 256);
-            this.player_picture.TabIndex = 8;
-            this.player_picture.TabStop = false;
+            this.PlayerPicture.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerPicture.Location = new System.Drawing.Point(75, 188);
+            this.PlayerPicture.Name = "PlayerPicture";
+            this.PlayerPicture.Size = new System.Drawing.Size(256, 256);
+            this.PlayerPicture.TabIndex = 8;
+            this.PlayerPicture.TabStop = false;
             // 
-            // Score_viewer
+            // ScoreViewer
             // 
-            this.Score_viewer.AutoSize = true;
-            this.Score_viewer.BackColor = System.Drawing.Color.White;
-            this.Score_viewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Score_viewer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Score_viewer.Location = new System.Drawing.Point(20, 20);
-            this.Score_viewer.Name = "Score_viewer";
-            this.Score_viewer.Size = new System.Drawing.Size(128, 48);
-            this.Score_viewer.TabIndex = 9;
-            this.Score_viewer.Text = "label1";
+            this.ScoreViewer.AutoSize = true;
+            this.ScoreViewer.BackColor = System.Drawing.Color.White;
+            this.ScoreViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ScoreViewer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreViewer.Location = new System.Drawing.Point(20, 20);
+            this.ScoreViewer.Name = "ScoreViewer";
+            this.ScoreViewer.Size = new System.Drawing.Size(128, 48);
+            this.ScoreViewer.TabIndex = 9;
+            this.ScoreViewer.Text = "label1";
             // 
             // Air
             // 
@@ -230,24 +230,24 @@
             this.Controls.Add(this.Earth);
             this.Controls.Add(this.Fire);
             this.Controls.Add(this.Air);
-            this.Controls.Add(this.Score_viewer);
-            this.Controls.Add(this.player_picture);
-            this.Controls.Add(this.mob_picture);
+            this.Controls.Add(this.ScoreViewer);
+            this.Controls.Add(this.PlayerPicture);
+            this.Controls.Add(this.MobPicture);
             this.Controls.Add(this.Attack);
-            this.Controls.Add(this.Mob_Life);
-            this.Controls.Add(this.Player_Life);
+            this.Controls.Add(this.MobLife);
+            this.Controls.Add(this.PlayerLife);
             this.Controls.Add(this.Settings);
             this.Controls.Add(this.Highscore);
             this.Controls.Add(this.Start);
-            this.Controls.Add(this.background);
+            this.Controls.Add(this.Background);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.background)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mob_picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player_picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Background)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MobPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PlayerPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,16 +255,16 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox background;
+        private System.Windows.Forms.PictureBox Background;
         private System.Windows.Forms.Button Start;
         private System.Windows.Forms.Button Highscore;
         private System.Windows.Forms.Button Settings;
-        private System.Windows.Forms.Label Player_Life;
-        private System.Windows.Forms.Label Mob_Life;
+        private System.Windows.Forms.Label PlayerLife;
+        private System.Windows.Forms.Label MobLife;
         private System.Windows.Forms.Button Attack;
-        private System.Windows.Forms.PictureBox mob_picture;
-        private System.Windows.Forms.PictureBox player_picture;
-        private System.Windows.Forms.Label Score_viewer;
+        private System.Windows.Forms.PictureBox MobPicture;
+        private System.Windows.Forms.PictureBox PlayerPicture;
+        private System.Windows.Forms.Label ScoreViewer;
         private System.Windows.Forms.Button Air;
         private System.Windows.Forms.Button Fire;
         private System.Windows.Forms.Button Earth;

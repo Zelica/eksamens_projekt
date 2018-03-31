@@ -12,56 +12,56 @@ namespace Eksamens_projekt
         public Slime()
         {
             Damage = 1;
-            Max_Life = 10;
+            MaxLife = 10;
 
             Score = 10;
 
-            Current_Life = Max_Life;
+            CurrentLife = MaxLife;
         }
     }
 
-    class Boss_Slime : Slime
+    class BossSlime : Slime
     {
-        public Boss_Slime()
+        public BossSlime()
         {
-            Max_Life = 20;
-            Current_Life = Max_Life;
+            MaxLife = 20;
+            CurrentLife = MaxLife;
         }
     }
 
-    class Fire_Slime : Slime
+    class FireSlime : Slime
     {
-        public Fire_Slime()
+        public FireSlime()
         {
-            fire_resistance = 1;
-            water_resistance = -1;
+            FireResistance = 1;
+            WaterResistance = -1;
         }
     }
 
-    class Water_Slime : Slime
+    class WaterSlime : Slime
     {
-        public Water_Slime()
+        public WaterSlime()
         {
-            water_resistance = 1;
-            fire_resistance = -1;
+            WaterResistance = 1;
+            FireResistance = -1;
         }
     }
 
-    class Air_Slime : Slime
+    class AirSlime : Slime
     {
-        public Air_Slime()
+        public AirSlime()
         {
-            air_resistance = 1;
-            earth_resistance = -1;
+            AirResistance = 1;
+            EarthResistance = -1;
         }
     }
 
-    class Earth_Slime : Slime
+    class EarthSlime : Slime
     {
-        public Earth_Slime()
+        public EarthSlime()
         {
-            earth_resistance = 1;
-            air_resistance = -1;
+            EarthResistance = 1;
+            AirResistance = -1;
         }
     }
 }

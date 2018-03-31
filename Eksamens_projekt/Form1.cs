@@ -19,6 +19,7 @@ namespace Eksamens_projekt
         Player player;
         Mob mob;
 
+        int Delay;
         int Level;
         float Floor;
         int TotalScore;
@@ -48,6 +49,7 @@ namespace Eksamens_projekt
 
             //skal være et primtal
             FloorsPrLevel = 7;
+            Delay = 0;
 
             Restart();
 
@@ -58,23 +60,16 @@ namespace Eksamens_projekt
             Highscore.Parent = Background;
             Settings.Parent = Background;
             Turn_Images.Parent = Background;
-            ScoreViewer.Parent = Background;
-            PlayerPicture.Parent = Background;
-            MobPicture.Parent = Background;
-            Start.Parent = Background;
-            Highscore.Parent = Background;
-            Settings.Parent = Background;
         }
 
-        public void Restart()
+        public async void Restart()
         {
+            Settings.Parent = Background;
+
             Background.Image = Eksamens_projekt.Properties.Resources.start_screen;
             PlayerPicture.Image = null;
             MobPicture.Image = null;
             Turn_Images.Image = null;
-            Background.Image = Eksamens_projekt.Properties.Resources.start_screen;
-            PlayerPicture.Image = null;
-            MobPicture.Image = null;
 
             ScoreViewer.Visible = false;
             Attack.Visible = false;
@@ -89,12 +84,18 @@ namespace Eksamens_projekt
             Floor = 0;
             TotalScore = 0;
             Level = 0;
+
+            Turn_Images.Image = Properties.Resources.Your_turn;
+            await Task.Delay(Delay);
+            Turn_Images.Image = null;
             PlayerTurn = true;
         }
 
 
         private void Start_Click(object sender, EventArgs e)
         {
+            Settings.Parent = MobPicture;
+
             Background.Image = Eksamens_projekt.Properties.Resources.Background1;
 
             player = new Player();
@@ -120,19 +121,8 @@ namespace Eksamens_projekt
 
             Floor++;
         }
-        /*public void Delayed(int delay, Action action)
-        {
-            Timer timer = new Timer();
-            timer.Interval = delay;
-            timer.Tick += (s, e) => {
-                action();
-                timer.Stop();
-            };
-            timer.Start();
-        }
-        */
 
-        private void NewFloor()
+        private async void NewFloor()
         {
             Floor++;
 
@@ -140,7 +130,7 @@ namespace Eksamens_projekt
 
             switch (Level)
             {
-                case 0: //skal være case 0:
+                case 0:
                     if(Floor % (FloorsPrLevel - 1) == 0)
                     {
                         mob = new BossSlime();
@@ -218,6 +208,9 @@ namespace Eksamens_projekt
             PlayerLife.Text = $"HP: {player.CurrentLife} / {player.MaxLife}";
             MobLife.Text = $"HP: {mob.CurrentLife} / {mob.MaxLife}";
 
+            Turn_Images.Image = Properties.Resources.Your_turn;
+            await Task.Delay(Delay);
+            Turn_Images.Image = null;
             PlayerTurn = true;
         }
 
@@ -287,7 +280,7 @@ namespace Eksamens_projekt
             if (mob.CurrentLife > 1)
             {
                 Turn_Images.Image = Properties.Resources.Enemies_turn;
-                await Task.Delay(1000);
+                await Task.Delay(Delay);
                 Turn_Images.Image = null;
 
                 player.CurrentLife = player.CurrentLife - mob.Damage;
@@ -296,16 +289,15 @@ namespace Eksamens_projekt
                 if (player.CurrentLife < 1)
                 {
                     Turn_Images.Image = Properties.Resources.Game_Over;
-                    await Task.Delay(1500);
+                    await Task.Delay(Delay);
                     Turn_Images.Image = null;
                     Restart();
                 }
                 else
                 {
                     Turn_Images.Image = Properties.Resources.Your_turn;
-                    await Task.Delay(1000);
+                    await Task.Delay(Delay);
                     Turn_Images.Image = null;
-                    //Delayed(2000, () => Turn_Images.Image = null);
                     PlayerTurn = true;
                 }
             }

@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Eksamens_projekt
 {
+    //Slime classen ned arver fra Mob classen.
     class Slime : Mob
     {
-
         public Slime()
         {
+            //Dette er de ting som er anderledes fra Mob classen
             Damage = 1;
             MaxLife = 10;
 
@@ -20,6 +21,7 @@ namespace Eksamens_projekt
         }
     }
 
+    //Dette er en subclass af Slime som er en subclass af Mob
     class BossSlime : Slime
     {
         public BossSlime()
@@ -29,6 +31,7 @@ namespace Eksamens_projekt
         }
     }
 
+    //Dette er en subclass af Slime som er en subclass af Mob
     class FireSlime : Slime
     {
         public FireSlime()
@@ -38,6 +41,7 @@ namespace Eksamens_projekt
         }
     }
 
+    //Dette er en subclass af Slime som er en subclass af Mob
     class WaterSlime : Slime
     {
         public WaterSlime()
@@ -47,6 +51,7 @@ namespace Eksamens_projekt
         }
     }
 
+    //Dette er en subclass af Slime som er en subclass af Mob
     class AirSlime : Slime
     {
         public AirSlime()
@@ -56,6 +61,7 @@ namespace Eksamens_projekt
         }
     }
 
+    //Dette er en subclass af Slime som er en subclass af Mob
     class EarthSlime : Slime
     {
         public EarthSlime()

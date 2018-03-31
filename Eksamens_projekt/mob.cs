@@ -8,20 +8,15 @@ namespace Eksamens_projekt
 {
     class Mob
     {
-        public float Max_Life;
+        public float MaxLife;
         public float Damage;
 
-        public float Current_Life;
+        public float CurrentLife;
         public int Score;
 
-        public float air_resistance = 0;
-        public float fire_resistance = 0;
-        public float water_resistance = 0;
-        public float earth_resistance = 0;
-
-        protected Mob()
-        {
-            Current_Life = Max_Life;
-        }
+        public float AirResistance = 0;
+        public float FireResistance = 0;
+        public float WaterResistance = 0;
+        public float EarthResistance = 0;
     }
 }

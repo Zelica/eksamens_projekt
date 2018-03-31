@@ -11,12 +11,12 @@ namespace Eksamens_projekt
 
         protected Undead()
         {
-            Max_Life = 25;
+            MaxLife = 25;
             Damage = 2;
 
             Score = 20;
 
-            Current_Life = Max_Life;
+            CurrentLife = MaxLife;
         }
     }
 
@@ -24,11 +24,11 @@ namespace Eksamens_projekt
     {
         public Armored_skeleton()
         {
-            Max_Life = 40;
-            Current_Life = Max_Life;
+            MaxLife = 40;
+            CurrentLife = MaxLife;
 
-            water_resistance = -1;
-            fire_resistance = 1;
+            WaterResistance = -1;
+            FireResistance = 1;
         }
     }
 
@@ -36,8 +36,8 @@ namespace Eksamens_projekt
     {
         public Skeleton()
         {
-            water_resistance = -1;
-            fire_resistance = 1;
+            WaterResistance = -1;
+            FireResistance = 1;
         }
     }
 
@@ -45,10 +45,10 @@ namespace Eksamens_projekt
     {
         public Vampire()
         {
-            earth_resistance = -1;
-            fire_resistance = -1;
-            water_resistance = 1;
-            air_resistance = 1;
+            EarthResistance = -1;
+            FireResistance = -1;
+            WaterResistance = 1;
+            AirResistance = 1;
         }
     }
 
@@ -56,10 +56,10 @@ namespace Eksamens_projekt
     {
         public Ghost()
         {
-            earth_resistance = -1;
-            fire_resistance = 1;
-            water_resistance = 1;
-            air_resistance = -1;
+            EarthResistance = -1;
+            FireResistance = 1;
+            WaterResistance = 1;
+            AirResistance = -1;
         }
     }
 
@@ -67,11 +67,11 @@ namespace Eksamens_projekt
     {
         public Zombie()
         {
-            Max_Life = 30;
-            Current_Life = Max_Life;
+            MaxLife = 30;
+            CurrentLife = MaxLife;
 
-            fire_resistance = -1;
-            earth_resistance = 1;
+            FireResistance = -1;
+            EarthResistance = 1;
         }
     }
 }

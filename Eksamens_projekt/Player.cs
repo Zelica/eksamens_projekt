@@ -8,19 +8,19 @@ namespace Eksamens_projekt
 {
     public class Player
     {
-        public float Max_Life = 20;
+        public float MaxLife = 20;
         public float Damage = 2;
 
-        public float Current_Life;
+        public float CurrentLife;
 
-        public float air_resistance = 0;
-        public float fire_resistance = 0;
-        public float water_resistance = 0;
-        public float earth_resistance = 0;
+        public float AirResistance = 0;
+        public float FireResistance = 0;
+        public float WaterResistance = 0;
+        public float EarthResistance = 0;
 
         public Player()
         {
-            Current_Life = Max_Life;
+            CurrentLife = MaxLife;
         }
 
     }

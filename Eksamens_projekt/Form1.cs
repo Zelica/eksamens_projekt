@@ -55,12 +55,12 @@ namespace Eksamens_projekt
             Restart();
 
             ScoreViewer.Parent = Background;
-            PlayerPicture.Parent = Turn_Images;
-            MobPicture.Parent = Turn_Images;
+            PlayerPicture.Parent = TurnImages;
+            MobPicture.Parent = TurnImages;
             Start.Parent = Background;
             Highscore.Parent = Background;
             Settings.Parent = Background;
-            Turn_Images.Parent = Background;
+            TurnImages.Parent = Background;
         }
 
         public async void Restart()
@@ -71,7 +71,7 @@ namespace Eksamens_projekt
             Background.Image = Eksamens_projekt.Properties.Resources.start_screen;
             PlayerPicture.Image = null;
             MobPicture.Image = null;
-            Turn_Images.Image = null;
+            TurnImages.Image = null;
 
             ScoreViewer.Visible = false;
             Attack.Visible = false;
@@ -89,9 +89,9 @@ namespace Eksamens_projekt
             Level = 0;
             
             // "Your turn" bliver vist i det stykke tid variablen Delay er sat til
-            Turn_Images.Image = Properties.Resources.Your_turn;
+            TurnImages.Image = Properties.Resources.Your_turn;
             await Task.Delay(Delay);
-            Turn_Images.Image = null;
+            TurnImages.Image = null;
             PlayerTurn = true;
         }
 
@@ -224,9 +224,9 @@ namespace Eksamens_projekt
             MobLife.Text = $"HP: {mob.CurrentLife} / {mob.MaxLife}";
 
             // "Your turn" bliver vist i det stykke tid variablen Delay er sat til
-            Turn_Images.Image = Properties.Resources.Your_turn;
+            TurnImages.Image = Properties.Resources.Your_turn;
             await Task.Delay(Delay);
-            Turn_Images.Image = null;
+            TurnImages.Image = null;
             PlayerTurn = true;
         }
 
@@ -305,25 +305,25 @@ namespace Eksamens_projekt
         {
             if (mob.CurrentLife > 1)
             {
-                Turn_Images.Image = Properties.Resources.Enemies_turn;
+                TurnImages.Image = Properties.Resources.Enemies_turn;
                 await Task.Delay(Delay);
-                Turn_Images.Image = null;
+                TurnImages.Image = null;
 
                 player.CurrentLife = player.CurrentLife - mob.Damage;
                 PlayerLife.Text = $"HP: {player.CurrentLife} / {player.MaxLife}";
 
                 if (player.CurrentLife < 1)
                 {
-                    Turn_Images.Image = Properties.Resources.Game_Over;
+                    TurnImages.Image = Properties.Resources.Game_Over;
                     await Task.Delay(Delay);
-                    Turn_Images.Image = null;
+                    TurnImages.Image = null;
                     Restart();
                 }
                 else
                 {
-                    Turn_Images.Image = Properties.Resources.Your_turn;
+                    TurnImages.Image = Properties.Resources.Your_turn;
                     await Task.Delay(Delay);
-                    Turn_Images.Image = null;
+                    TurnImages.Image = null;
                     PlayerTurn = true;
                 }
             }

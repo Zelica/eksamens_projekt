@@ -42,11 +42,11 @@
             this.Fire = new System.Windows.Forms.Button();
             this.Earth = new System.Windows.Forms.Button();
             this.Water = new System.Windows.Forms.Button();
-            this.Turn_Images = new System.Windows.Forms.PictureBox();
+            this.TurnImages = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Background)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MobPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerPicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Turn_Images)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TurnImages)).BeginInit();
             this.SuspendLayout();
             // 
             // Background
@@ -224,21 +224,21 @@
             this.Water.UseVisualStyleBackColor = false;
             this.Water.Click += new System.EventHandler(this.Water_Click);
             // 
-            // Turn_Images
+            // TurnImages
             // 
-            this.Turn_Images.BackColor = System.Drawing.Color.Transparent;
-            this.Turn_Images.Location = new System.Drawing.Point(0, 0);
-            this.Turn_Images.Name = "Turn_Images";
-            this.Turn_Images.Size = new System.Drawing.Size(896, 640);
-            this.Turn_Images.TabIndex = 14;
-            this.Turn_Images.TabStop = false;
+            this.TurnImages.BackColor = System.Drawing.Color.Transparent;
+            this.TurnImages.Location = new System.Drawing.Point(0, 0);
+            this.TurnImages.Name = "TurnImages";
+            this.TurnImages.Size = new System.Drawing.Size(896, 640);
+            this.TurnImages.TabIndex = 14;
+            this.TurnImages.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1457, 1029);
             this.Controls.Add(this.MobPicture);
-            this.Controls.Add(this.Turn_Images);
+            this.Controls.Add(this.TurnImages);
             this.Controls.Add(this.Water);
             this.Controls.Add(this.Earth);
             this.Controls.Add(this.Fire);
@@ -260,7 +260,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Background)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MobPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Turn_Images)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TurnImages)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,7 +282,7 @@
         private System.Windows.Forms.Button Fire;
         private System.Windows.Forms.Button Earth;
         private System.Windows.Forms.Button Water;
-        private System.Windows.Forms.PictureBox Turn_Images;
+        private System.Windows.Forms.PictureBox TurnImages;
     }
 }
 

@@ -59,16 +59,21 @@ namespace Eksamens_projekt
             MobPicture.Parent = TurnImages;
             Start.Parent = Background;
             Highscore.Parent = Background;
-            Settings.Parent = Background;
             TurnImages.Parent = Background;
         }
 
-        public async void Restart()
+        public void Restart()
         {
-            // For at knappen til settingsne, ikke cutter ind over mobne skiftes knappens parent
+            Background.Image = Eksamens_projekt.Properties.Resources.start_screen;
+
+            // for at knappen ikke cutter ind over mobbet skifter parenten mellem Background og ModPicture
             Settings.Parent = Background;
 
-            Background.Image = Eksamens_projekt.Properties.Resources.start_screen;
+            // for at disse knapperne ikke kan bruges inde i selve spillet skifter de mellem enabled og diabled
+            Start.Enabled = true;
+            Highscore.Enabled = true;
+            Settings.Enabled = true;
+
             PlayerPicture.Image = null;
             MobPicture.Image = null;
             TurnImages.Image = null;
@@ -87,21 +92,15 @@ namespace Eksamens_projekt
             Floor = 0;
             TotalScore = 0;
             Level = 0;
-            
-            // "Your turn" bliver vist i det stykke tid variablen Delay er sat til
-            TurnImages.Image = Properties.Resources.Your_turn;
-            await Task.Delay(Delay);
-            TurnImages.Image = null;
-            PlayerTurn = true;
+            PlayerTurn = false;
         }
 
-
-        private void Start_Click(object sender, EventArgs e)
+        private async void Start_Click(object sender, EventArgs e)
         {
-            // For at knappen til settingsne, ikke cutter ind over mobne skiftes knappens parent
-            Settings.Parent = MobPicture;
-
             Background.Image = Eksamens_projekt.Properties.Resources.Background1;
+
+            // for at knappen ikke cutter ind over mobbet skifter parenten mellem Background og ModPicture
+            Settings.Parent = MobPicture;
 
             // playeren bliver spawnet
             player = new Player();
@@ -118,17 +117,28 @@ namespace Eksamens_projekt
             // ens totale Score bliver vist
             ScoreViewer.Text = $"Score: {TotalScore}";
 
+            // for at disse knapperne ikke kan bruges inde i selve spillet skifter de mellem enabled og diabled
+            Start.Enabled = false;
+            Highscore.Enabled = false;
+            Settings.Enabled = false;
+
             ScoreViewer.Visible = true;
-            Attack.Visible = true;
             PlayerLife.Visible = true;
             MobLife.Visible = true;
 
+            Attack.Visible = true;
             Air.Visible = true;
             Fire.Visible = true;
             Earth.Visible = true;
             Water.Visible = true;
 
             Floor++;
+
+            // "Your turn" bliver vist i det stykke tid variablen Delay er sat til
+            TurnImages.Image = Properties.Resources.Your_turn;
+            await Task.Delay(Delay);
+            TurnImages.Image = null;
+            PlayerTurn = true;
         }
 
         private async void NewFloor()

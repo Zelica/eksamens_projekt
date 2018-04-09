@@ -252,6 +252,7 @@
             this.Controls.Add(this.Start);
             this.Controls.Add(this.Background);
             this.Controls.Add(this.Settings);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

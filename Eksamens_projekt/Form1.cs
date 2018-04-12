@@ -153,7 +153,7 @@ namespace Eksamens_projekt
             {
                 case 0:
                     // Der tjekkes hvorvidt om det er det sidste mob der skal spawnes på dette level, hvis det er spawnes levelets boss
-                    if(Floor % (FloorsPrLevel - 1) == 0)
+                    if(Floor % (FloorsPrLevel) == 6)
                     {
                         mob = new BossSlime();
                         MobPicture.Image = Eksamens_projekt.Properties.Resources.Boss_Slime;
